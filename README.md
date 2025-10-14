@@ -16,4 +16,4 @@
 
 ### 训练
     Model：yolo11n-pose dataset：COCO8-pose imgsz：640  epochs：45
-![训练结果](assets\val_batch0_pred.jpg)![推理结果](assets\val_batch0_labels.jpg)![训练数据](assets\results.png)
+![训练结果](assets/val_batch0_pred.jpg)![推理结果](assets/val_batch0_labels.jpg)![训练数据](assets/results.png)

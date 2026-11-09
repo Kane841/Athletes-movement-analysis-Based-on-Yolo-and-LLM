@@ -71,13 +71,13 @@ This unified framework ensures YOLO26 is applicable across real-time detection, 
         Trained on [COCO](../datasets/detect/coco.md) with 80 pre-trained classes.
         See [Detection Docs](../tasks/detect.md) for usage once models are released.
 
-        | Model   | size<br><sup>(pixels) | mAP<sup>val<br>50-95(e2e) | mAP<sup>val<br>50-95 | Speed<br><sup>CPU ONNX<br>(ms)  | Speed<br><sup>T4 TensorRT10<br>(ms)  | params<br><sup>(M) | FLOPs<br><sup>(B) |
-        | -----   | --------------------- | --------------------      | -------------------- | ------------------------------- | ------------------------------------ | ------------------ | ----------------- |
-        | YOLO26n | 640                   | 39.8                      | 40.3                 | 38.90 ± 0.7                     | 1.7 ± 0.0                            | 2.4                | 5.4               |
-        | YOLO26s | 640                   | 47.2                      | 47.6                 | 87.16 ± 0.9                     | 2.7 ± 0.0                            | 9.5                | 20.7              |
-        | YOLO26m | 640                   | 51.5                      | 51.7                 | 220.0 ± 1.4                     | 4.9 ± 0.1                            | 20.4               | 68.2              |
-        | YOLO26l | 640                   | 53.0*                     | 53.4*                | 286.17 ± 2.0*                   | 6.5 ± 0.2*                           | 24.8               | 86.4              |
-        | YOLO26x | 640                   | -                         | -                    | -                               | -                                    | -                  | -                 |
+        | Model   | size<br><sup>(pixels) | mAP<sup>val<br>50-95(e2e) | mAP<sup>val<br>50-95 | Speed<br><sup>CPU ONNX<br>(ms) | Speed<br><sup>T4 TensorRT10<br>(ms) | params<br><sup>(M) | FLOPs<br><sup>(B) |
+        | ------- | --------------------- | ------------------------- | -------------------- | ------------------------------ | ----------------------------------- | ------------------ | ----------------- |
+        | YOLO26n | 640                   | 39.8                      | 40.3                 | 38.90 ± 0.7                    | 1.7 ± 0.0                           | 2.4                | 5.4               |
+        | YOLO26s | 640                   | 47.2                      | 47.6                 | 87.16 ± 0.9                    | 2.7 ± 0.0                           | 9.5                | 20.7              |
+        | YOLO26m | 640                   | 51.5                      | 51.7                 | 220.0 ± 1.4                    | 4.9 ± 0.1                           | 20.4               | 68.2              |
+        | YOLO26l | 640                   | 53.0*                     | 53.4*                | 286.17 ± 2.0*                  | 6.5 ± 0.2*                          | 24.8               | 86.4              |
+        | YOLO26x | 640                   | -                         | -                    | -                              | -                                   | -                  | -                 |
 
         *Metrics for YOLO26l and YOLO26x are in progress. Final benchmarks will be added here.
 

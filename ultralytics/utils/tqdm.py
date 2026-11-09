@@ -8,6 +8,8 @@ import time
 from functools import lru_cache
 from typing import IO, Any
 
+from typing_extensions import Self
+
 
 @lru_cache(maxsize=1)
 def is_noninteractive_console() -> bool:
@@ -16,13 +18,12 @@ def is_noninteractive_console() -> bool:
 
 
 class TQDM:
-    """
-    Lightweight zero-dependency progress bar for Ultralytics.
+    """Lightweight zero-dependency progress bar for Ultralytics.
 
-    Provides clean, rich-style progress bars suitable for various environments including Weights & Biases,
-    console outputs, and other logging systems. Features zero external dependencies, clean single-line output,
-    rich-style progress bars with Unicode block characters, context manager support, iterator protocol support,
-    and dynamic description updates.
+    Provides clean, rich-style progress bars suitable for various environments including Weights & Biases, console
+    outputs, and other logging systems. Features zero external dependencies, clean single-line output, rich-style
+    progress bars with Unicode block characters, context manager support, iterator protocol support, and dynamic
+    description updates.
 
     Attributes:
         iterable (object): Iterable to wrap with progress bar.
@@ -94,8 +95,7 @@ class TQDM:
         initial: int = 0,
         **kwargs,
     ) -> None:
-        """
-        Initialize the TQDM progress bar with specified configuration options.
+        """Initialize the TQDM progress bar with specified configuration options.
 
         Args:
             iterable (object, optional): Iterable to wrap with progress bar.
@@ -167,7 +167,7 @@ class TQDM:
         fallback = f"{rate:.1f}B/s" if self.is_bytes else f"{rate:.1f}{self.unit}/s"
         return next((f"{rate / t:.1f}{u}" for t, u in self.scales if rate >= t), fallback)
 
-    def _format_num(self, num: int | float) -> str:
+    def _format_num(self, num: float) -> str:
         """Format number with optional unit scaling."""
         if not self.unit_scale or not self.is_bytes:
             return str(num)
@@ -330,11 +330,11 @@ class TQDM:
             except Exception:
                 pass
 
-    def __enter__(self) -> TQDM:
+    def __enter__(self) -> Self:
         """Enter context manager."""
         return self
 
-    def __exit__(self, *args: Any) -> None:
+    def __exit__(self, *args: object) -> None:
         """Exit context manager and close progress bar."""
         self.close()
 

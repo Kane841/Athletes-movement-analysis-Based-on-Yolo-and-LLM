@@ -10,8 +10,7 @@ from pathlib import Path
 
 
 class CPUInfo:
-    """
-    Provide cross-platform CPU brand and model information.
+    """Provide cross-platform CPU brand and model information.
 
     Query platform-specific sources to retrieve a human-readable CPU descriptor and normalize it for consistent
     presentation across macOS, Linux, and Windows. If platform-specific probing fails, generic platform identifiers are
@@ -72,11 +71,11 @@ class CPUInfo:
         s = re.sub(r"\s+", " ", s.strip())
         s = s.replace("(TM)", "").replace("(tm)", "").replace("(R)", "").replace("(r)", "").strip()
         # Normalize common Intel pattern to 'Model Freq'
-        m = re.search(r"(Intel.*?i\d[\w-]*) CPU @ ([\d.]+GHz)", s, re.I)
+        m = re.search(r"(Intel.*?i\d[\w-]*) CPU @ ([\d.]+GHz)", s, re.IGNORECASE)
         if m:
             return f"{m.group(1)} {m.group(2)}"
         # Normalize common AMD Ryzen pattern to 'Model Freq'
-        m = re.search(r"(AMD.*?Ryzen.*?[\w-]*) CPU @ ([\d.]+GHz)", s, re.I)
+        m = re.search(r"(AMD.*?Ryzen.*?[\w-]*) CPU @ ([\d.]+GHz)", s, re.IGNORECASE)
         if m:
             return f"{m.group(1)} {m.group(2)}"
         return s
